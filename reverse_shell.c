@@ -64,4 +64,4 @@ BOOL WINAPI DllMain(HINSTANCE hDLL, DWORD dwReason, LPVOID lpReserved) {
 }
 
 // COMPILAÇÃO:
-// cl /LD reverseshelldll.c /link /out:shell.dll ws2_32.lib    compilador 
+// cl /LD reverse_shell.c /link /out:shell.dll ws2_32.lib    compilador 
