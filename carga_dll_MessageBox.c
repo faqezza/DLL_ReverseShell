@@ -7,20 +7,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <shlobj.h>
-#define IDD_PROGRESS_DIALOG 101
-#define IDC_PROGRESS_TEXT 102
-#define IDC_PROGRESS_BAR 103
-// Função para criar a caixa de diálogo de progresso
 
-HWND createProgressDialog(HWND hwndParent) {
-    return CreateDialog(GetModuleHandle(NULL), MAKEINTRESOURCE(IDD_PROGRESS_DIALOG), hwndParent, NULL);
-}
+// variavel para criar a caixa de diálogo de progresso
 
-// Função para atualizar o progresso da barra de progresso
-void updateProgressBar(HWND hwndProgressBar, int position) {
-    SendMessage(hwndProgressBar, PBM_SETPOS, position, 0);
-}
-
+HWND createProgressDialog;
 
 // Função para exibir uma janela de mensagem perguntando ao usuário se deseja fazer uma atualização
 BOOL askForUpdate() {
@@ -38,7 +28,7 @@ void performUpdate() {
     LPCWSTR title = L"Windows System"; // Título da janela
 
     // Cria a caixa de diálogo de progresso
-    HWND progressDialog = createProgressDialog(hwnd);
+    HWND progressDialog;
     ShowWindow(progressDialog, SW_SHOW); // Mostra a caixa de diálogo
 
     // Fecha a caixa de diálogo de progresso quando a atualização estiver concluída
@@ -101,7 +91,5 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     
     }// Nunca alcançamos este ponto, mas para completar, liberamos a DLL
     
-    return 0;
-}
-
+    
 // compilador g++ .\carga_dll_MessageBox.c -o carga_dll_MessageBox.exe -mwindows -lcomctl32
