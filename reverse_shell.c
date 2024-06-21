@@ -1,3 +1,6 @@
+// Esta será nossa DLL que criara a conexao
+
+
 #include <winsock2.h>
 #include <windows.h>
 #include <stdio.h>
