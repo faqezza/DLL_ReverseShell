@@ -27,7 +27,7 @@ int main() {
     // Manter o programa ativo em um loop infinito
     while (1) {
         // Realizar algumas operações para continuar em execução
-        int a = 10, b = 5;
+        int a = 1425, b = 7;
         int soma = a + b;
         int subtracao = a - b;
         int multiplicacao = a * b;
